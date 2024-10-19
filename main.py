@@ -1,11 +1,10 @@
-from openpyxl import Workbook
 from openpyxl import load_workbook
 import win32com.client
 
 workbook = load_workbook(filename = "Physics-Test.xlsx")
 sheet = workbook.active
 
-for count in range(1):
+for count in range(2):
     num = count+2
     wrongQ = sheet["D"+ str(num)].value
     wrongQ = wrongQ.replace(" ", "")
@@ -23,7 +22,7 @@ workbook.save(filename= "Physics-Test.xlsx")
 
 
 outlook = win32com.client.Dispatch("Outlook.Application")
-for count2 in range(1):
+for count2 in range(2):
     num2 = count2 + 2
     new_mail = outlook.CreateItem(0)
     new_mail.To = sheet["C" + str(num2)].value
