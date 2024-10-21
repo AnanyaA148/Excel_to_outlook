@@ -1,3 +1,4 @@
+# NOT A NECCESARY FILE. Just used to test the library
 import win32com.client
 
 outlook = win32com.client.Dispatch("Outlook.Application")
